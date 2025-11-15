@@ -1,0 +1,14 @@
+Citra Asli (Original Image): Histogram hist_original menunjukkan distribusi nilai piksel yang cenderung terkonsentrasi di bagian tengah hingga terang, dengan sebagian besar piksel memiliki nilai yang cukup tinggi. Ini mengindikasikan bahwa citra asli mungkin memiliki kontras yang baik atau cenderung cerah secara keseluruhan.
+
+Citra Negatif (Negative Transformation): Histogram hist_negative adalah kebalikan dari histogram citra asli. Jika citra asli memiliki banyak piksel terang, citra negatif akan memiliki banyak piksel gelap, dan sebaliknya. Ini berarti nilai-nilai piksel telah dibalik (misalnya, 255 menjadi 0, 0 menjadi 255, 100 menjadi 155). Persebarannya juga akan mencerminkan pola kebalikan dari citra asli.
+
+Citra Logaritmik (Logarithmic Transformation): Histogram hist_log menunjukkan bahwa transformasi logaritmik telah memampatkan rentang nilai piksel terang dan melebarkan rentang nilai piksel gelap. Ini sering menghasilkan citra yang lebih terang secara keseluruhan dan detail di area gelap menjadi lebih terlihat. Histogramnya akan bergeser ke kanan (menuju nilai piksel yang lebih tinggi/terang) dibandingkan dengan citra asli, dengan konsentrasi yang lebih tinggi pada nilai-nilai yang lebih terang.
+
+Kapan Transformasi Logaritmik Lebih Bermanfaat Dibanding Negatif?
+
+Transformasi Negatif: Transformasi negatif paling bermanfaat ketika Anda ingin menyoroti detail dalam area yang gelap pada citra, atau jika Anda ingin melihat citra dalam representasi 'negatif' untuk tujuan tertentu (misalnya, dalam pencitraan medis atau ketika bekerja dengan film negatif). Ini adalah operasi yang sangat sederhana dan langsung membalikkan intensitas piksel.
+
+Transformasi Logaritmik: Transformasi logaritmik lebih bermanfaat dalam situasi berikut:
+
+Ketika citra memiliki rentang dinamis yang sangat luas: Ini sering terjadi pada citra yang diambil dalam kondisi pencahayaan yang sulit, di mana ada area yang sangat gelap dan sangat terang secara bersamaan. Fungsi logaritmik secara efektif memampatkan rentang intensitas yang lebih tinggi (area terang) dan melebarkan rentang intensitas yang lebih rendah (area gelap), sehingga detail di area gelap menjadi lebih terlihat tanpa membuat area terang menjadi terlalu jenuh.
+Untuk meningkatkan detail di area gelap: Ini adalah aplikasi utama transformasi logaritmik. Jika citra Anda terlihat redup atau memiliki detail penting yang tersembunyi di bayangan, transformasi logaritmik dapat secara signifikan meningkatkan visibilitas detail tersebut.
